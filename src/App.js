@@ -1,21 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import Header from './header';
+import Card from './card';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <div>
+          <Header />
+          <Container>
+            <CardContainer>
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </CardContainer>
+          </Container>
+        </div>
     );
   }
 }
 
 export default App;
+
+const CardContainer = styled.div`
+  background-color: #f1f1f1;
+  width:80%;
+  min-height:600px;
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-around;
+  align-items:flex-start;
+  padding-top:100px;
+
+`;
+const Container = styled.div`
+  background-color: #f1f1f1;
+  width:100%;
+  min-height:600px;
+  display:flex;
+  justify-content:center;
+`;
