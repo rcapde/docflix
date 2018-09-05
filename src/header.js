@@ -30,13 +30,22 @@ const Logo = styled.div`
 `;
 
 class Header extends Component {
+  constructor(){
+    super();
+    this.state = {
+      search: '',
+    }
+  }
+  onInputChange(event) {
+  this.setState({ search: event.target.value });
+}
   render(){
     return(
       <div>
         <Wrapper>
           <Logo />
-          <Input placeholder="Search"/>
-
+          <Input type="text" onChange={this.onInputChange.bind(this)} placeholder="Search"/>
+          <h1>{this.state.search}</h1>
         </Wrapper>
       </div>
     )
