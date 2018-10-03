@@ -3,6 +3,25 @@ import React, { Component } from 'react';
 
 
 
+class Card extends Component {
+
+  render(){
+    return(
+      <div>
+        <Image>
+          <Overlay>
+            <h2>Titol</h2>
+            <span> Descripcio inicial ...</span>
+          </Overlay>
+        </Image>
+      </div>
+    )
+  }
+}
+
+export default Card;
+
+
 const Info = styled.div`
   width: 60%;
   height:50px;
@@ -33,20 +52,3 @@ const Overlay = styled.div`
    }
    color:white;
 `;
-
-class Card extends Component {
-  render(){
-    return(
-      <div>
-        <Image>
-          <Overlay>
-            <h2>Titol</h2>
-            <span> Descripcio inicial ...</span>
-          </Overlay>
-        </Image>
-      </div>
-    )
-  }
-}
-
-export default Card;

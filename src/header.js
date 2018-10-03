@@ -2,6 +2,32 @@ import styled from "styled-components";
 import React, { Component } from 'react';
 
 
+
+
+class Header extends Component {
+  constructor(){
+    super();
+    this.state = {
+      query: '',
+    }
+  }
+  onInputChange(event) {
+  this.setState({ query: event.target.value });
+}
+  render(){
+    return(
+      <div>
+        <Wrapper>
+          <Logo />
+          <Input type="text" onChange={this.onInputChange.bind(this)} placeholder="Search"/>
+        </Wrapper>
+      </div>
+    )
+  }
+}
+
+export default Header;
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100px;
@@ -28,28 +54,3 @@ const Logo = styled.div`
   width:60px;
   height:60px;
 `;
-
-class Header extends Component {
-  constructor(){
-    super();
-    this.state = {
-      search: '',
-    }
-  }
-  onInputChange(event) {
-  this.setState({ search: event.target.value });
-}
-  render(){
-    return(
-      <div>
-        <Wrapper>
-          <Logo />
-          <Input type="text" onChange={this.onInputChange.bind(this)} placeholder="Search"/>
-          <h1>{this.state.search}</h1>
-        </Wrapper>
-      </div>
-    )
-  }
-}
-
-export default Header;
